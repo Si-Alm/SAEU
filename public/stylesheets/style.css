@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+@media only screen and (min-width: 500px){
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Anonymous Pro', monospace, "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+
+  header {
+    width: 100%;
+    height: 15%;
+    background-image: url('../images/red-image-background.png');
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    font-size: 115%;
+  }
+
+  body {
+    width: 100%;
+    height: 80%;
+    background-image: url('../images/background.jpeg');
+    overflow: auto;
+  }
+
+  #form-body {
+    margin-left: 25%;
+    padding-top: 10%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  footer {
+    width: 100%;
+    height: 5%;    
+    background-image: url('../images/red-image-background.jpeg');
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    color: white;
+  }
+
+  input{
+    width: 100%;
+    height: 5vh;
+  }
+
+  button {
+    width: 50%;
+    height: 5.5vh;
+  }
+
+  textarea {
+    width: 102%;
+    height: 15vh;
+  }
+  h6 {
+    padding-top: 1%;
+  }
+}

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div(id="form-body")
+    h3 Sign the Peitition Against #[em Everything]
+    form(action="/", method="POST")
+      input(name="name", type="text", placeholder="Name")
+      br
+      br
+      input(name="email", type="email", placeholder="name@example.com")
+      br
+      br
+      textarea(name="msg", placeholder="Say something")
+      br
+      br
+      button(name="submit", type="submit") Submit
