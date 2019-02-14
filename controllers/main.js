@@ -19,7 +19,7 @@ let SignerSchema = new mongoose.Schema({
         require: true,
         unique: true
     },
-    message: String
+    msg: String
 });
 
 var SignerModel = mongoose.model('Signer', SignerSchema);
