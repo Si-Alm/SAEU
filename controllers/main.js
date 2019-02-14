@@ -19,7 +19,8 @@ let SignerSchema = new mongoose.Schema({
         require: true,
         unique: true
     },
-    msg: String
+    msg: String,
+    signed: Date
 });
 
 var SignerModel = mongoose.model('Signer', SignerSchema);
@@ -30,7 +31,7 @@ exports.submit_sign = (req, res, next) => {
     }
 
   
-    let model = new SignerModel(_.extend(req.body, { name: req.body.name, email: req.body.email, msg: req.body.msg }));
+    let model = new SignerModel(_.extend(req.body, { name: req.body.name, email: req.body.email, msg: req.body.msg, signed: new Date().toLocaleString() }));
     model.save()
         .then(doc => {
             if(!doc || doc.length===0) {
@@ -46,6 +47,7 @@ exports.submit_sign = (req, res, next) => {
 
     console.log(`signer name: ${req.body.name} said ${req.body.msg}`);
     console.log(`email: ${req.body.email}`);
+    console.log(new Date().toLocaleString());
     res.redirect('/');
 }
 
