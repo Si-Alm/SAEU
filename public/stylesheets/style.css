@@ -53,9 +53,10 @@
     height: 5.5vh;
   }
 
-  textarea {
+  #textarea {
     width: 102%;
     height: 15vh;
+    word-break: break-all;
   }
   h6 {
     padding-top: 1%;

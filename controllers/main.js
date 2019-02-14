@@ -1,18 +1,14 @@
 let mongoose = require('mongoose');
-
-
+let _ = require("underscore");
 const server = 'ds335275.mlab.com:35275';
 const database = 'saeu';
 const user = 'Si-Alm';
 const password = 'LastDetail.123';
 
 
-
 exports.get_main = (req, res) => {
     res.render('index', {title: "SAEU"});
 }
-
-
 
 mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, {useNewUrlParser: true});
 
@@ -31,12 +27,10 @@ var SignerModel = mongoose.model('Signer', SignerSchema);
 exports.submit_sign = (req, res, next) => {
     if(!req.body) {
         return res.status(400).send('Request body is missing');
-    }exports.get_main = (req, res) => {
-    res.render('index', {title: "SAEU"});
-}
+    }
 
   
-    let model = new SignerModel(req.body);
+    let model = new SignerModel(_.extend(req.body, { name: req.body.name, email: req.body.email, msg: req.body.msg }));
     model.save()
         .then(doc => {
             if(!doc || doc.length===0) {
