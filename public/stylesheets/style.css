@@ -57,6 +57,7 @@
     width: 102%;
     height: 15vh;
     word-break: break-all;
+    resize: none;
   }
   h6 {
     padding-top: 1%;
