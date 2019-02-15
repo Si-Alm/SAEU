@@ -2,7 +2,8 @@ extends layout
 
 block content
   div(id="form-body")
-    h3 Sign the Peitition Against #[em Everything]
+    h3 Sign the Peitition Against #[u #[em Everything]]
+    br
     form(action="/", method="POST")
       input(name="name", type="text", placeholder="Name")
       br
