@@ -50,4 +50,3 @@ exports.submit_sign = (req, res, next) => {
     console.log(new Date().toLocaleString());
     res.redirect('/');
 }
-
