@@ -74,10 +74,10 @@ exports.get_signs = (req,res) => {
                  }
             } 
                 for(var i=0; i<names.length; i++) {
-                    if(messages[i] != undefined || messages[i] != null || messages[i] != '')
-                        bigRay.push(`${names[i]} said '${messages[i]}'`);
+                    if(messages[i] == undefined || messages[i] == null || messages[i] == '')
+                    bigRay.push(`${names[i]} signed the petition!`);
                     else
-                        bigRay.push(`${names[i]} signed the petition!`)
+                        bigRay.push(`${names[i]} said '${messages[i]}'`);
                 }
             res.render('forum', {title:"SAEU", bigRay:bigRay});
         }
