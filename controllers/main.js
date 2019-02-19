@@ -6,10 +6,6 @@ const user = 'Si-Alm';
 const password = 'LastDetail.123';
 
 
-exports.get_main = (req, res) => {
-    res.render('index', {title: "SAEU"});
-}
-
 mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, {useNewUrlParser: true});
 
 let SignerSchema = new mongoose.Schema({
@@ -50,3 +46,41 @@ exports.submit_sign = (req, res, next) => {
     console.log(new Date().toLocaleString());
     res.redirect('/');
 }
+
+
+exports.get_main = (req, res) => {
+    res.render('index', {title: "SAEU"});
+}
+
+var name = "";
+exports.get_signs = (req,res) => {
+    //var logvalue = req.headers['log'];
+    var names = [];
+    var messages = [];
+    var bigRay = [];
+    SignerModel.find({}, (err, foundData) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send();
+        } else {
+            if(foundData.length == 0) {
+                var responseObject = undefined;
+                res.status(404).send(responseObject);
+            } else {
+                var responseObject = foundData;
+                for(var i=0; i<foundData.length;i++) {
+                    names.push(foundData[i].name);
+                    messages.push(foundData[i].msg);
+                 }
+            } 
+                for(var i=0; i<names.length; i++) {
+                    if(messages[i] != undefined)
+                        bigRay.push(`${names[i]} said '${messages[i]}'`);
+                    else
+                        bigRay.push(`${names[i]} signed the petition!`)
+                }
+            res.render('forum', {title:"SAEU", bigRay:bigRay});
+        }
+    })
+}  
+
