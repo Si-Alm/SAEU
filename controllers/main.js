@@ -44,7 +44,7 @@ exports.submit_sign = (req, res, next) => {
     console.log(`signer name: ${req.body.name} said ${req.body.msg}`);
     console.log(`email: ${req.body.email}`);
     console.log(new Date().toLocaleString());
-    res.redirect('/');
+    res.redirect('/forum');
 }
 
 
