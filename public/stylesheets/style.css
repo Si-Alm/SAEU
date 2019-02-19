@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
+h2 a {
+  text-decoration: none;
+  color: white;
+}
 p a {
   color: black;
   text-align: center;
