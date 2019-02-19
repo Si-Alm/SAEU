@@ -36,7 +36,7 @@
 
   #forum-div {
     margin-left: 25%;
-    padding-top: 12.5%;
+    padding-top: 5%;
     width: 50%;
     height: 50%;
     text-align: left;
@@ -46,7 +46,7 @@
 
   .forum-div {
     width: 100%;
-    height: fit-content;
+    height: 10%;
     margin-bottom: 5%;
     background-color: beige;
     color: black;
