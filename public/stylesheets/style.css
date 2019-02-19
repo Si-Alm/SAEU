@@ -5,14 +5,12 @@ h2 a {
   color: white;
 }
 p a {
-  color: black;
-  text-align: center;
-  text-decoration: underline;
-}
-p a:hover {
   color: rgb(33, 60, 82);
   font-style: italic;
   text-decoration: none;
+}
+p a:hover {
+  color: white;
 }
 @media only screen and (min-width: 500px){
   * {
