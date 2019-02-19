@@ -74,7 +74,7 @@ exports.get_signs = (req,res) => {
                  }
             } 
                 for(var i=0; i<names.length; i++) {
-                    if(messages[i] != undefined)
+                    if(messages[i] != undefined || messages[i] != null || message[i] != '')
                         bigRay.push(`${names[i]} said '${messages[i]}'`);
                     else
                         bigRay.push(`${names[i]} signed the petition!`)
