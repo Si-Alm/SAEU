@@ -46,10 +46,12 @@
 
   .forum-div {
     width: 100%;
-    height: 10%;
+    height: 15%;
     margin-bottom: 5%;
-    background-color: beige;
-    color: black;
+    background-color: #FFFDD0;
+    color: rgb(39, 38, 38);
+    font-weight: lighter;
+    text-indent: 10px;
     box-shadow: 5px 5px 10px rgb(94, 91, 91);
   }
   footer {
@@ -130,10 +132,11 @@
 
   .forum-div {
     width: 100%;
-    height: fit-content;
+    height: 105%;
     margin-bottom: 5%;
-    background-color: beige;
-    color: black;
+    background-color: #FFFDD0;
+    color: rgb(39, 38, 38);
+    font-weight: lighter;
     box-shadow: 5px 5px 10px rgb(94, 91, 91);
   }
 
