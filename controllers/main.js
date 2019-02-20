@@ -52,7 +52,6 @@ exports.get_main = (req, res) => {
     res.render('index', {title: "SAEU"});
 }
 
-var name = "";
 exports.get_signs = (req,res) => {
     //var logvalue = req.headers['log'];
     var names = [];
