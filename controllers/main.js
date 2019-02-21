@@ -72,6 +72,8 @@ exports.get_signs = (req,res) => {
                     messages.push(foundData[i].msg);
                  }
             } 
+                names.reverse();
+                messages.reverse();
                 for(var i=0; i<names.length; i++) {
                     if(messages[i] == undefined || messages[i] == null || messages[i] == '')
                     bigRay.push(`${names[i]} signed the petition!`);
