@@ -1,5 +1,6 @@
 extends layout
-
+block extrahead
+    link(rel="stylesheet", , href='/stylesheets/forum-styles.css')
 block content
     div(id="forum-div")
         each val in bigRay.length ? bigRay : ['There are no signers']

@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+h2 a {
+  text-decoration: none;
+  color: white;
+}
+p a {
+  color: rgb(33, 60, 82);
+  font-style: italic;
+  text-decoration: none;
+}
+p a:hover {
+  color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Anonymous Pro', monospace, "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+  width: 100%;
+  height: fit-content;
+  background-image: url('../images/red-image-background.png');
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  font-size: 115%;
+  box-shadow: 10px 10px 23px rgb(68, 66, 66);
+  position: fixed;
+  padding-top: .5%;
+}
+
+body {
+  width: 100%;
+  height: 76%;
+  background-image: url('../images/background.jpeg');
+  overflow: auto;
+}
+
+#form-body {
+  margin-left: 25%;
+  padding-top: 9%;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+#forum-div {
+  margin-left: 25%;
+  padding-top: 10%;
+  width: 50%;
+  height: 50%;
+  text-align: left;
+  overflow: hidden;
+  color: beige;
+  margin-bottom: 5%;
+}
+
+.forum-div {
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 5%;
+  background-color: #f4f5f7;
+  color: rgb(39, 38, 38);
+  font-weight: lighter;
+  text-indent: 10px;
+  box-shadow: 5px 5px 10px rgb(94, 91, 91);
+}
+
+.forum-div p {
+  margin-left: 2%;
+}
+footer {
+  width: 100%;
+  height: 7.5%;    
+  background-image: url('../images/red-image-background.jpeg');
+  text-align: center;
+  padding-bottom: 1%;
+  bottom: 0;
+  position: relative;
+  color: white;
+}
+
+input{
+  width: 100%;
+  height: 5vh;
+}
+
+button {
+  width: 50%;
+  height: 5.5vh;
+}
+
+#textarea {
+  width: 102%;
+  height: 15vh;
+  word-break: break-all;
+  resize: none;
+}
+h6 {
+  padding-top: 1%;
+}
+
+@media only screen and (max-width: 875px) {
+  #forum-div {
+    margin-left: 25%;
+    padding-top: 25%;
+    width: 50%;
+    height: 50%;
+    text-align: left;
+    overflow: hidden;
+    color: beige;
+    margin-bottom: 5%;
+  }
+
+  .forum-div {
+    width: 100%;
+    height: 15vh;
+    margin-bottom: 10%;
+    background-color: #f4f5f7;
+    color: rgb(39, 38, 38);
+    font-weight: lighter;
+    text-indent: 10px;
+    box-shadow: 5px 5px 10px rgb(94, 91, 91);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #forum-div {
+    margin-left: 25%;
+    padding-top: 50%;
+    width: 50%;
+    height: 50%;
+    text-align: left;
+    overflow: hidden;
+    color: beige;
+    margin-bottom: 5%;
+  }
+
+  .forum-div {
+    width: 100%;
+    height: 23vh;
+    margin-bottom: 10%;
+    background-color: #f4f5f7;
+    color: rgb(39, 38, 38);
+    font-weight: lighter;
+    text-indent: 10px;
+    box-shadow: 5px 5px 10px rgb(94, 91, 91);
+  }
+}
