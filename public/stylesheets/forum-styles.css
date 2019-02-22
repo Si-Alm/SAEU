@@ -52,7 +52,7 @@ body {
   margin-left: 25%;
   padding-top: 10%;
   width: 50%;
-  height: 50%;
+  height: 75%;
   text-align: left;
   overflow: hidden;
   color: beige;
@@ -60,14 +60,16 @@ body {
 }
 
 .forum-div {
-  width: 100%;
+  width: 95%;
   height: 10vh;
+  float: left;
+  margin-left: 2%;
   margin-bottom: 5%;
   background-color: #f4f5f7;
   color: rgb(39, 38, 38);
   font-weight: lighter;
   text-indent: 10px;
-  box-shadow: 5px 5px 10px rgb(94, 91, 91);
+  overflow: scroll;
 }
 
 .forum-div p {

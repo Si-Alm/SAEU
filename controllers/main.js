@@ -1,14 +1,17 @@
 let mongoose = require('mongoose');
 let _ = require("underscore");
+
+//variables for connecting to mongodb
 const server = 'ds335275.mlab.com:35275';
 const database = 'saeu';
 const user = 'Si-Alm';
 const password = 'LastDetail.123';
 
-
+//mongodb connection
 mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, {useNewUrlParser: true});
 
-let SignerSchema = new mongoose.Schema({
+//schema for collecting and storing user responses
+let SignerSchema = new mongoose.Schema({ //will collect user name, email, message, and the date they signed
     name: String, 
     email: {
         type: String, 
@@ -21,8 +24,8 @@ let SignerSchema = new mongoose.Schema({
 
 var SignerModel = mongoose.model('Signer', SignerSchema);
 
-exports.submit_sign = (req, res, next) => {
-    if(!req.body) {
+exports.submit_sign = (req, res, next) => { //method to collect user information in index route
+    if(!req.body) {                         //this is a post method
         return res.status(400).send('Request body is missing');
     }
 
@@ -40,24 +43,25 @@ exports.submit_sign = (req, res, next) => {
             res.status(500).json(err);
         });
 
-
+    //unessecary console logs, used during development
     console.log(`signer name: ${req.body.name} said ${req.body.msg}`);
     console.log(`email: ${req.body.email}`);
     console.log(new Date().toLocaleString());
-    res.redirect('/forum');
+    res.redirect('/forum'); //when submitted, page re-routes to forum page
 }
 
 
-exports.get_main = (req, res) => {
+exports.get_main = (req, res) => { //necessary default get function
     res.render('index', {title: "SAEU"});
 }
 
-exports.get_signs = (req,res) => {
+exports.get_signs = (req,res) => { //function to retrieve mongodb data and send it to the forum page
     //var logvalue = req.headers['log'];
-    var names = [];
-    var messages = [];
-    var bigRay = [];
-    SignerModel.find({}, (err, foundData) => {
+    var names = []; //stores names(if it wasn't obvious)
+    var messages = []; //stores messages
+    //this will store strings that combine the appropriate names and messages
+    var bigRay = []; 
+    SignerModel.find({}, (err, foundData) => { //inner function that interacts with data
         if(err) {
             console.log(err);
             res.status(500).send();
@@ -66,21 +70,23 @@ exports.get_signs = (req,res) => {
                 var responseObject = undefined;
                 res.status(404).send(responseObject);
             } else {
-                var responseObject = foundData;
+                var responseObject = foundData; //gets retrieved data from mongodb
                 for(var i=0; i<foundData.length;i++) {
                     names.push(foundData[i].name);
                     messages.push(foundData[i].msg);
                  }
             } 
+                //arrays reversed to have a backwards-chronological display of messages
                 names.reverse();
                 messages.reverse();
-                for(var i=0; i<names.length; i++) {
+                for(var i=0; i<names.length; i++) { //loop to combine messages and names array into bigRay
                     if(messages[i] == undefined || messages[i] == null || messages[i] == '')
                     bigRay.push(`${names[i]} signed the petition!`);
                     else
                         bigRay.push(`${names[i]} said '${messages[i]}'`);
                 }
-            res.render('forum', {title:"SAEU", bigRay:bigRay});
+            res.render('forum', {title:"SAEU", bigRay:bigRay}); //renders forum pages
+                                                                //with title and bigRay
         }
     })
 }  
