@@ -69,7 +69,12 @@ body {
   color: rgb(39, 38, 38);
   font-weight: lighter;
   text-indent: 10px;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.forum-div::-webkit-scrollbar {
+    background-color: #737272;
+    border: 1px solid #000;
 }
 
 .forum-div p {
