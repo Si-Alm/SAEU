@@ -80,8 +80,12 @@ exports.get_signs = (req,res) => { //function to retrieve mongodb data and send 
                 names.reverse();
                 messages.reverse();
                 for(var i=0; i<names.length; i++) { //loop to combine messages and names array into bigRay
-                    if(messages[i] == undefined || messages[i] == null || messages[i] == '')
-                    bigRay.push(`${names[i]} signed the petition!`);
+                    if(names[i] == undefined || names[i] == null || names[i] == '' && !(messages[i] == undefined || messages[i] == null || messages[i] == ''))
+                        bigRay.push(`Anonymous said '${messages[i]}`)
+                    else if(names[i] == undefined || names[i] == null || names[i] == '' && (messages[i] == undefined || messages[i] == null || messages[i] == ''))
+                        continue;
+                    else if(messages[i] == undefined || messages[i] == null || messages[i] == '')
+                        bigRay.push(`${names[i]} signed the petition!`);
                     else
                         bigRay.push(`${names[i]} said '${messages[i]}'`);
                 }
