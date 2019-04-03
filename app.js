@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 var indexRouter = require('./routes/index');
-var rebRouter = require('./routes/rebellion');
 var forumRouter = require('./routes/forum');
 
 var app = express();
@@ -22,7 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-app.use('/rebellion', rebRouter);
 app.use('/forum', forumRouter);
 
 // catch 404 and forward to error handler
