@@ -2,10 +2,10 @@ let mongoose = require('mongoose');
 let _ = require("underscore");
 
 //variables for connecting to mongodb
-const server = 'ds335275.mlab.com:35275';
-const database = 'saeu';
-const user = 'Si-Alm';
-const password = 'LastDetail.123';
+const server = '<mlab database link>';
+const database = '<database_name';
+const user = '<username>';
+const password = '<password>';
 
 //mongodb connection
 mongoose.connect(`mongodb://${user}:${password}@${server}/${database}`, {useNewUrlParser: true});
