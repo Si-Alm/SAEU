@@ -16,6 +16,6 @@
     "nodemon": "^1.18.10",
     "pug": "2.0.0-beta11",
     "serve-favicon": "^2.5.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   }
 }
